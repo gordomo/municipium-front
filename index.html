@@ -9,10 +9,10 @@
     </head>
     <body ng-app="Municipium">
 
-        <div ng-controller="HomeController as home" ng-cloak class="gridListHome">
+        <div ng-controller="HomeController as home" ng-cloak style="background-image: {{home.back}}" class="gridListHome">
             <md-grid-list md-cols="2" md-gutter="0.5em" md-row-height="4:3">
                 <md-grid-tile ng-repeat="gd in home.grid" style="background-color:  {{gd.color}}" md-colspan="{{gd.ancho}}" md-rowspan="{{gd.alto}}">
-                    <md-button> 
+                    <md-button ng-click="home.go(gd.id)"> 
                         <i class="fa {{gd.icono}}" aria-hidden="true"></i>
                         <md-grid-tile-footer>
                             <h3 class="tileFoot">{{gd.name}}</h3>

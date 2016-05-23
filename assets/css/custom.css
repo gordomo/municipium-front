@@ -18,9 +18,6 @@ md-grid-list md-grid-tile md-grid-tile-footer, md-grid-list md-grid-tile md-grid
     background: rgba(0,0,0,0.30);
 }
 
-.gridListHome{
-    background-image: url(../img/back1.png);
-}
 .gridListHome button{
     width: 100%;
     height: 100%;
