@@ -1,0 +1,32 @@
+@font-face {
+    font-family: robo-regular;
+    src: url(../font/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: robo-bold;
+    src: url(../font/Roboto-Bold.ttf);
+}
+
+md-grid-tile i{
+    font-size: 4em !important;
+    text-shadow: 1px 1px black;
+    color: white;
+}
+
+md-grid-list md-grid-tile md-grid-tile-footer, md-grid-list md-grid-tile md-grid-tile-header{
+    height: 30px;
+    background: rgba(0,0,0,0.30);
+}
+
+.gridListHome{
+    background-image: url(../img/back1.png);
+}
+.gridListHome button{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.tileFoot{
+    margin: 0 0 0 5px;
+    font-family: robo-bold;
+}
