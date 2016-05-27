@@ -7,23 +7,223 @@
     src: url(../font/Roboto-Bold.ttf);
 }
 
-md-grid-tile i{
-    font-size: 4em !important;
-    text-shadow: 1px 1px black;
+.login-page {
+  margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    margin: 10px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: robo-bold, sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.19s;
+}
+.form input:focus {
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+}
+.login-form .loginButtons, .register-form .loginButtons{
+    width: 100%;
+    color: white;
+}
+.facebook{
+    background-color: #3b5998;
+    transition: box-shadow 0.19s;
+}
+.google{
+    background-color: #F44336;
+    transition: box-shadow 0.19s;
+}
+.ingresar{
+    background-color: #5CB85C;
+    transition: box-shadow 0.19s;
+}
+.nuevo{
+    background-color: #5bc0de;
+    transition: box-shadow 0.19s;
+}
+.ingresar:hover, .google:hover, .facebook:hover, .nuevo:hover{
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
     color: white;
 }
 
-md-grid-list md-grid-tile md-grid-tile-footer, md-grid-list md-grid-tile md-grid-tile-header{
-    height: 30px;
-    background: rgba(0,0,0,0.30);
+.login-form button{
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    margin: 0 0 15px;
+}
+.crearUno{
+    border: 1px solid #ccc;
+    border-radius: 24px;
+}
+.crearUno button{
+    border-radius: 24px;
+    margin: 0px 0px 15px 0;
+}
+input:-webkit-autofill {
+    background-color: #f2f2f2 !important;
+}
+.form .message {
+  margin: 15px 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: robo-bold, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
 }
 
-.gridListHome button{
-    width: 100%;
-    height: 100%;
-    margin: 0;
+.home{
+    height: auto;
+    min-height: 100%;
+    padding: 5% 5% 0 0;
+    transition: all linear 0.3s;
 }
-.tileFoot{
-    margin: 0 0 0 5px;
-    font-family: robo-bold;
+.home .gridItem{
+    text-align: center;
+    padding-top: 15px;
+    min-height: 135px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    color: white;
+    font-size: 5em;
+    text-shadow: 1px 1px black;
+    position: relative;
+    cursor: pointer;
+    transition: all linear 0.3s;
+}
+.home .gridItem:hover{
+    text-shadow: 1px 1px 3px black;
+}
+.uno{
+    width: 45%;
+    float: left;
+}
+.dos{
+    width: 95%;
+    float: left;
+}
+.izquierda{
+    margin-right: 5%;
+}
+
+.gridItemFooter{
+    font-size: 0.3em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 90px;
+    padding: 10px 45px 0 45px;
+    text-align: center;
+    background-color: rgba(135, 158, 179, 0.86);
+    transition: all linear 0.3s;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 2em;
+    transition: all 0.3s ease-out;
+}
+footer i{
+    margin: 5px 15px;
+    cursor: pointer;
+}
+footer i:hover, footer i:focus{
+    text-shadow: 2px 2px 5px black;
+}
+.ng-hide {
+  height: 0;
+  padding: 0;
+}
+.menuButton{
+    padding: 12px 14px;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.52);
+    color: #fff;
+    background-color: #d9534f;
+    border: none;
+    z-index: 1
+}
+
+.open{
+    opacity: 1;
+    min-height: 90%!important;
+    min-width: 95%!important;
+    padding-top: 10px !important;
+    margin-top: 10px;
+}
+.closed{
+    transition: opacity 1s ease-out;
+    opacity: 0; 
+    min-height: 0 !important;
+    overflow: hidden;
+    margin: 0 !important;
+    font-size: 0px !important;
+    padding-top: 0px !important;
 }

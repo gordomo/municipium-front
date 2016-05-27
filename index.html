@@ -2,39 +2,75 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Municipium</title>
         <!-- Angular Material style sheet -->
-        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="assets/css/angular-material.css">-->
+        <link rel="stylesheet" href="assets/font/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/custom.css">
     </head>
-    <body ng-app="Municipium">
-
-        <div ng-controller="HomeController as home" ng-cloak style="background-image: {{home.back}}" class="gridListHome">
-            <md-grid-list md-cols="2" md-gutter="0.5em" md-row-height="4:3">
-                <md-grid-tile ng-repeat="gd in home.grid" style="background-color:  {{gd.color}}" md-colspan="{{gd.ancho}}" md-rowspan="{{gd.alto}}">
-                    <md-button ng-click="home.go(gd.id)"> 
-                        <i class="fa {{gd.icono}}" aria-hidden="true"></i>
-                        <md-grid-tile-footer>
-                            <h3 class="tileFoot">{{gd.name}}</h3>
-                        </md-grid-tile-footer>
-                    </md-button>
-                </md-grid-tile>
-            </md-grid-list>
+    <body ng-app="Municipium" ng-cloak >
+        <div ng-controller="HomeController as home">
+            <div ng-show="home.login" ng-cloak class="login">
+                <div class="login-page">
+                    <div class="form">
+                        <h1>{{home.appTitle}}</h1>
+                        <form class="register-form">
+                            <input type="text" style="display:none">
+                            <input type="password" style="display:none">
+                            <input type="text" ng-model="home.name" placeholder="usuario" autocomplete="off"/>
+                            <input type="password" ng-model="home.pass" placeholder="contraseña" autocomplete="off"/>
+                            <input type="text" placeholder="email" ng-model="home.mail" autocomplete="off"/>
+                            <button class="btn ingresar loginButtons" ng-click="home.nuevoUsuario()" style="color: white;margin-bottom: 15px;">Crear usuario</button>
+                            <div class="crearUno">
+                                <p class="message">Ya tenes usuario?</p>
+                                <button class="btn nuevo" style="color: white;">Ingresá</button>
+                            </div>    
+                        </form>
+                        <form class="login-form">
+                            <input type="text" style="display:none">
+                            <input type="password" style="display:none">
+                            <input type="text" ng-model="home.name" placeholder="usuario" autocomplete="off"/>
+                            <input type="password" ng-model="home.pass" placeholder="contraseña" autocomplete="off"/>
+                            <button ng-click="home.ingresar()" class="btn ingresar loginButtons">Ingresar</button>
+                            <button class="btn google loginButtons">Ingresar con Google</button>
+                            <button class="btn facebook loginButtons">Ingresar con Facebook</button>
+                            <div class="crearUno">
+                                <p class="message">No tenes usuario?</p>
+                                <button class="btn nuevo" style="color: white;">Crea uno</button>
+                            </div>    
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div ng-show="home.home" style="background-image: {{home.back}}"  ng-cloak class="col-xs-12 col-sm-12 col-md-12 home gridListHome">
+                <div ng-repeat="grid in home.grid" 
+                     style="background-color: {{grid.color}}" 
+                     ng-class="[grid.espacio, grid.estado]" 
+                     ng-click="home.open(grid)"
+                     class="gridItem" 
+                     id="{{grid.id}}">
+                    <i class="fa {{grid.icono}}"></i>
+                    <div class="gridItemFooter">
+                        {{grid.name}}
+                    </div>    
+                </div>
+                <button class="menuButton" ng-click="home.menuToogle()"><i class="fa fa-bars"></i></button>
+                <footer ng-show="home.menuDisplayed">
+                    <i class="fa fa-chevron-left" ng-click="home.closed()"></i>
+                    <i class="fa fa-user" ng-click=""></i>
+                    <i class="fa fa-cogs" ng-click=""></i>
+                    <i class="fa fa-sign-out" ng-click=""></i>
+                </footer>
+            </div>
         </div>
-
         <!-- Angular Material requires Angular.js Libraries -->
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-
-        <!-- Angular Material Library -->
-        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/angular-animate.min.js"></script>
+        <script src="assets/js/jquery-1.12.4.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
         <script src="assets/js/app.js"></script>
     </body>
 </html>
-
-<!--
-Copyright 2016 Google Inc. All Rights Reserved. 
-Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
--->
