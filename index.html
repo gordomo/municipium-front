@@ -44,9 +44,9 @@
                 </div>
             </div>
             
-            <div ng-show="home.home" style="background-image: {{home.back}}"  ng-cloak class="col-xs-12 col-sm-12 col-md-12 home gridListHome">
+            <div ng-show="home.home" ng-style="home.back"  ng-cloak class="col-xs-12 col-sm-12 col-md-12 home gridListHome">
                 <div ng-repeat="grid in home.grid" 
-                     style="background-color: {{grid.color}}" 
+                     ng-style="grid.color" 
                      ng-class="[grid.espacio, grid.estado]" 
                      ng-click="home.open(grid)"
                      class="gridItem" 
@@ -56,9 +56,9 @@
                         {{grid.name}}
                     </div>    
                 </div>
-                <button class="menuButton" ng-click="home.menuToogle()"><i class="fa fa-bars"></i></button>
+                <button class="menuButton" ng-hide="home.desplegada" ng-click="home.menuToogle()"><i class="fa fa-bars"></i></button>
+                <button class="closeButton" ng-show="home.desplegada" ng-click="home.closed()"><i class="fa fa-backward"></i></button>
                 <footer ng-show="home.menuDisplayed">
-                    <i class="fa fa-chevron-left" ng-click="home.closed()"></i>
                     <i class="fa fa-user" ng-click=""></i>
                     <i class="fa fa-cogs" ng-click=""></i>
                     <i class="fa fa-sign-out" ng-click=""></i>
